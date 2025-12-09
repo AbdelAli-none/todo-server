@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "priorities",
+  "info": {
+    "singularName": "priority",
+    "pluralName": "priorities",
+    "displayName": "priority"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "iconPriority": {
+      "type": "string",
+      "required": true
+    },
+    "levelPriority": {
+      "type": "string",
+      "required": true
+    },
+    "valuePriority": {
+      "type": "integer",
+      "required": true
+    },
+    "todos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::todo.todo",
+      "mappedBy": "priority"
+    }
+  }
+}
