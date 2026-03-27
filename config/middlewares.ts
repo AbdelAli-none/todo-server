@@ -8,6 +8,7 @@ export default [
       origin: [
         "http://localhost:5173",
         "https://todo-client-delta-one.vercel.app",
+        /https:\/\/.*\.vercel\.app$/,
       ],
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
       headers: ["Content-Type", "Authorization"],
