@@ -9,8 +9,8 @@ module.exports = [
         "http://localhost:5173", // Local development
         "http://localhost:3000", // Alternative local
         "https://todo-client-h80e4f2ph-topolovskoda-4585s-projects.vercel.app", // Your Vercel URL
-        "https://*.vercel.app", // All Vercel preview deployments
       ],
+      credentials: true,
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
       headers: ["Content-Type", "Authorization", "Origin", "Accept"],
       keepHeaderOnError: true,
