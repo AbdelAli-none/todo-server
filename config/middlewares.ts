@@ -1,4 +1,4 @@
-export default [
+module.exports = [
   "strapi::logger",
   "strapi::errors",
   "strapi::security",
@@ -6,12 +6,14 @@ export default [
     name: "strapi::cors",
     config: {
       origin: [
-        "http://localhost:5173",
-        "https://todo-client-delta-one.vercel.app",
-        /https:\/\/.*\.vercel\.app$/,
+        "http://localhost:5173", // Local development
+        "http://localhost:3000", // Alternative local
+        "https://todo-client-h80e4f2ph-topolovskoda-4585s-projects.vercel.app", // Your Vercel URL
+        "https://*.vercel.app", // All Vercel preview deployments
       ],
-      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-      headers: ["Content-Type", "Authorization"],
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
+      headers: ["Content-Type", "Authorization", "Origin", "Accept"],
+      keepHeaderOnError: true,
     },
   },
   "strapi::poweredBy",
